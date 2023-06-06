@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응형 웹 width</title>
+  <style>
+    #wrap {
+      width: 970px;
+      background-color: #ff0;
+      margin: 0 auto;
+    }
+    /* 
+    [미디어쿼리]
+    - 일반 style 보다 아래 작성
+    - 특정 기기에서 스타일을 다르게 적용
+    - 미디어 타입 : all, screen(화면), print(프린터), tv(텔레비전)
+
+    * max-width : 최대 너비 (범위가 설정한 값'까지만' 넓어지다가 인식해서 적용)
+    ex) 650px이라면 400~500px까지는 인식하다가 700px이면 인식하지 않음 (이하)
+    * min-width : 최소 너비 (범위가 설정한 값'까지만' 좁아지다가 인식해서 적용)
+    ex) 700px이라면 너비를 줄이다가 700px까지만 인식을 함(이상)
+    */
+
+    /* 
+    1.---------------------------------
+    [min-width 1200px]
+    - 최소 너비 1200px일 때
+    - 웹 브라우저의 너비 : 1200px 이상일 때
+    -----------------------------------
+     */
+     @media screen and (min-width: 1200px) {
+      #wrap {
+        font: 15px/2em serif;
+        width: 1200px;
+        background-color: #0ff;
+      }
+     }
+
+     /* 
+    2.---------------------------------
+    [max-width 970px]
+    - 최대 너비 970px일 때
+    - 웹 브라우저의 너비 : 970px 이하일 때
+    -----------------------------------
+     */
+     @media screen and (min-width: 481px) and (max-width: 970px) {
+      #wrap {
+        width: auto;
+        font: 12px sans-serif;
+        color: #f00;
+      }
+     }
+     /*
+    3.---------------------------------
+    [max-width 480px]
+    - 최대 너비 480px일 때
+    - 웹 브라우저의 너비 : 480px 이하일 때
+    -----------------------------------
+     */
+     @media screen and (max-width: 480px) {
+      #wrap {
+        font-size: 19px;
+        background-color: #ddd;
+      }
+     }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <h1>LOGO</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, officiis aliquid nemo maiores reprehenderit porro velit, quaerat vitae delectus magni enim incidunt aperiam id consectetur voluptatibus. Dolores placeat corporis quibusdam.</p>
+  </div>
+</body>
+</html>
